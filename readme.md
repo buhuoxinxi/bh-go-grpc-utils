@@ -4,7 +4,7 @@
 
 ## config
 
-see ./config.go
+see ./testdata/config.go
 
 ## dev environment
 
