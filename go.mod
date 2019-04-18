@@ -1,4 +1,4 @@
-module buhuoxinxi/bh-go-grpc-utils
+module github.com/buhuoxinxi/bh-go-grpc-utils
 
 go 1.12
 

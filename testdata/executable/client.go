@@ -1,12 +1,13 @@
 package main
 
 import (
-	_ "buhuoxinxi/bh-go-grpc-utils/testdata"
+	_ "github.com/buhuoxinxi/bh-go-grpc-utils/testdata"
+
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 	"time"
 
-	"buhuoxinxi/bh-go-grpc-utils"
+	"github.com/buhuoxinxi/bh-go-grpc-utils"
 	ecpb "google.golang.org/grpc/examples/features/proto/echo"
 )
 

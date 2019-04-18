@@ -1,9 +1,9 @@
 package main
 
 import (
-	_ "buhuoxinxi/bh-go-grpc-utils/testdata"
+	_ "github.com/buhuoxinxi/bh-go-grpc-utils/testdata"
 
-	"buhuoxinxi/bh-go-grpc-utils"
+	"github.com/buhuoxinxi/bh-go-grpc-utils"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc/codes"
 	ecpb "google.golang.org/grpc/examples/features/proto/echo"

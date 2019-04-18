@@ -1,8 +1,8 @@
 package bhgrpcutils
 
 import (
-	"buhuoxinxi/bh-go-grpc-utils/etcd_balancer"
 	"fmt"
+	"github.com/buhuoxinxi/bh-go-grpc-utils/etcd_balancer"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"

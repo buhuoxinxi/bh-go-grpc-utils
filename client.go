@@ -1,7 +1,7 @@
 package bhgrpcutils
 
 import (
-	"buhuoxinxi/bh-go-grpc-utils/etcd_balancer"
+	"github.com/buhuoxinxi/bh-go-grpc-utils/etcd_balancer"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/balancer/roundrobin"
