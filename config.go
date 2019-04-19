@@ -11,7 +11,7 @@ import (
 
 // server config
 const (
-	defautServerPort = "50051"
+	defaultServerPort = "50051"
 )
 
 // server env
@@ -57,7 +57,7 @@ var DefaultConfigFn = func() {
 	if port := strings.TrimSpace(os.Getenv(envKeyServerPort)); len(port) > 0 {
 		cfg.ServerPort = strings.TrimPrefix(port, ":")
 	} else {
-		cfg.ServerPort = defautServerPort
+		cfg.ServerPort = defaultServerPort
 	}
 
 	// ssl enable
