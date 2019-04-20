@@ -11,7 +11,7 @@ import (
 
 // server config
 const (
-	defaultServerPort = "50051"
+	defaultServerPort = "50051" // default port
 )
 
 // server env
