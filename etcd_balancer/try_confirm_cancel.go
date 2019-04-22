@@ -62,7 +62,7 @@ func (e *TryConfirmCancel) PutTryKeyValue(tryNumber int) error {
 	e.TCCKeySlice = make([]string, tryNumber)
 
 	// key prefix
-	e.TCCKeyPrefix = xid.New().String()
+	e.TCCKeyPrefix = "try_confirm_cancel/" + xid.New().String()
 
 	// etcd alive ttl
 	leaseResp, err := e.ETCDClient.Grant(context.Background(), e.TCCKeyTTL)
