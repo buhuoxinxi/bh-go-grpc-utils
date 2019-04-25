@@ -11,6 +11,19 @@ import (
 
 // NewClient grpc.Dail()
 func NewClient() *grpc.ClientConn {
+	// server config
+	serverConfig := balancer.GetServerConfig()
+
+	return newClient(serverConfig.ServerName)
+}
+
+// NewClientWithServerName grpc.Dail()
+func NewClientWithServerName(serverName string) *grpc.ClientConn {
+	return newClient(serverName)
+}
+
+// newClient grpc.Dail()
+func newClient(serverName string) *grpc.ClientConn {
 	// resolver
 	r := balancer.NewResolver()
 	resolver.Register(r)
@@ -32,11 +45,8 @@ func NewClient() *grpc.ClientConn {
 	// balancer name
 	opts = append(opts, grpc.WithBalancerName(roundrobin.Name))
 
-	// server config
-	serverConfig := balancer.GetServerConfig()
-
 	// server address
-	serverAddr := r.Scheme() + "://ikaiguang/" + serverConfig.ServerName
+	serverAddr := r.Scheme() + "://ikaiguang/" + serverName
 	logrus.Printf("dial : %s", serverAddr)
 
 	// client
