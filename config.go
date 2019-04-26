@@ -112,7 +112,7 @@ func parseServerSSLEnv(cfg *Config) {
 func getLocalIPV4() string {
 	addrList, err := net.InterfaceAddrs()
 	if err != nil {
-		logrus.Fatalf("net.InterfaceAddrs error : %v", err)
+		logrus.Panicf("net.InterfaceAddrs error : %v", err)
 	}
 
 	for _, addr := range addrList {

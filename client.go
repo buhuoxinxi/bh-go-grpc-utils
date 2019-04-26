@@ -35,7 +35,7 @@ func newClient(serverName string) *grpc.ClientConn {
 	if config.SSLEnable {
 		cred, err := credentials.NewClientTLSFromFile(config.SSLCertFile, config.SSLServerName)
 		if err != nil {
-			logrus.Fatalf("NewClient credentials.NewClientTLSFromFile error : %v", err)
+			logrus.Panicf("NewClient credentials.NewClientTLSFromFile error : %v", err)
 		}
 		opts = append(opts, grpc.WithTransportCredentials(cred))
 	} else {
@@ -52,7 +52,7 @@ func newClient(serverName string) *grpc.ClientConn {
 	// client
 	conn, err := grpc.Dial(serverAddr, opts...)
 	if err != nil {
-		logrus.Fatalf("NewClient grpc.Dial error : %v", err)
+		logrus.Panicf("NewClient grpc.Dial error : %v", err)
 	}
 	//defer conn.Close()
 

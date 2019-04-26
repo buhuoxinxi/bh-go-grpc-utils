@@ -36,7 +36,7 @@ func NewServer() *grpc.Server {
 	if config.SSLEnable {
 		cred, err := credentials.NewServerTLSFromFile(config.SSLCertFile, config.SSLKeyFile)
 		if err != nil {
-			logrus.Fatalf("credentials.NewServerTLSFromFile error : %v", err)
+			logrus.Panicf("credentials.NewServerTLSFromFile error : %v", err)
 		}
 		opts = append(opts, grpc.Creds(cred))
 	}
@@ -55,7 +55,7 @@ func RunServer(server *grpc.Server) {
 	// tcp
 	lis, err := net.Listen("tcp", ":"+config.ServerPort)
 	if err != nil {
-		logrus.Fatalf("RunServer net.Listen error : %v", err)
+		logrus.Panicf("RunServer net.Listen error : %v", err)
 	}
 
 	// server address
@@ -64,7 +64,7 @@ func RunServer(server *grpc.Server) {
 
 	// register server to etcd
 	if err := balancer.RegisterServer(serverAddr); err != nil {
-		logrus.Fatalf("balancer.RegisterServer error : %v", err)
+		logrus.Panicf("balancer.RegisterServer error : %v", err)
 	}
 
 	// remove server from etcd
@@ -84,7 +84,7 @@ func RunServer(server *grpc.Server) {
 
 	// start
 	if err := server.Serve(lis); err != nil {
-		logrus.Fatalf("RunServer server.Serve error : %v", err)
+		logrus.Panicf("RunServer server.Serve error : %v", err)
 	}
 }
 

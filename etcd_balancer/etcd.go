@@ -12,7 +12,7 @@ func init() {
 	// new client
 	c, err := clientv3.New(*etcdConfig)
 	if err != nil {
-		logrus.Fatalf("[E] etcd clientv3.New fail : %v", err)
+		logrus.Panicf("[E] etcd clientv3.New fail : %v", err)
 	}
 	etcdClient = c
 }

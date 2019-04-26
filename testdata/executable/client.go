@@ -25,7 +25,7 @@ func main() {
 			&ecpb.EchoRequest{Message: "this is client request msg"},
 		)
 		if err != nil {
-			logrus.Fatal(err)
+			logrus.Panic(err)
 		}
 		logrus.Printf("client.UnaryEcho resp : %v", resp)
 
